@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  php-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 'softexpert_app'
+    restart: always
+    command: 'php -S 0.0.0.0:80'
+    ports:
+      - '9050:80'
+    volumes:
+      - .:/var/www/html
+    networks:
+      - container-connection
+    depends_on:
+      - db-app
+
+  db-app:
+    container_name: 'softexpert_db'
+    image: postgres
+    restart: always
+    ports:
+      - '${DB_PORT}:5432'
+    environment:
+      POSTGRES_DATABASE: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - './config/Database/Dump/core.sql:/docker-entrypoint-initdb.d/create_tables.sql'
+    networks:
+      - container-connection
+
+networks:
+  container-connection:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.57.0/24
