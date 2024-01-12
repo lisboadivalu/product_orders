@@ -22,6 +22,7 @@ class ProductRepository extends AbstractRepository
         $query = "SELECT 
                     p.id, 
                     c.title category_title,
+                    p.category_id,
                     p.title, 
                     p.price, 
                     p.created_at,
