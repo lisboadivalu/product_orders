@@ -40,11 +40,12 @@ class ProductRepository extends AbstractRepository
 
     public function create(array $data)
     {
-        $categoryId = $this->connection->prepare("SELECT * FROM categories WHERE id = :id");
-        $categoryId->bindValue(":id", $data['category_id']);
-        $result = $categoryId->fetch(PDO::FETCH_ASSOC);
+        $validatedId = intval($data['category_id']);
 
-        if(!$result) throw new PDOException('category_id not found');
+        $query = "SELECT * FROM categories WHERE id = $validatedId";
+        $id = $this->connection->query($query)->fetch(PDO::FETCH_ASSOC);
+
+        if(!$id) throw new PDOException('category_id not found');
 
         try {
             $this->connection->beginTransaction();
