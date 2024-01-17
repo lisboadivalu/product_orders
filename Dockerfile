@@ -9,16 +9,15 @@ COPY . /var/www/html
 
 # Install any dependencies your PHP application needs
 # For example, if using Composer, uncomment the following lines
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get update && apt-get install -y \
     libpq-dev \
     git\
     nano \
     zip \
     unzip \
-    curl \
-    && \
-    rm -rf /var/lib/apt/lists/*
+    curl
+
+RUN rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install pgsql pdo pdo_pgsql
 

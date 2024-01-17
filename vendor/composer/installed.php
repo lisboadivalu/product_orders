@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '422decf1cb3d11aa0df4ed532787f8f9c7313185',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '422decf1cb3d11aa0df4ed532787f8f9c7313185',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -27,6 +27,18 @@
             'install_path' => __DIR__ . '/../carbonphp/carbon-doctrine-types',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'cordoval/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'davedevelopment/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'doctrine/deprecations' => array(
             'pretty_version' => '1.1.2',
@@ -55,6 +67,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'hamcrest/hamcrest-php' => array(
+            'pretty_version' => 'v2.0.1',
+            'version' => '2.0.1.0',
+            'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hamcrest/hamcrest-php',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'illuminate/contracts' => array(
             'pretty_version' => 'v10.40.0',
             'version' => '10.40.0.0',
@@ -63,6 +84,21 @@
             'install_path' => __DIR__ . '/../illuminate/contracts',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'kodova/hamcrest-php' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'mockery/mockery' => array(
+            'pretty_version' => '1.6.7',
+            'version' => '1.6.7.0',
+            'reference' => '0cc058854b3195ba21dc6b1f7b1f60f4ef3a9c06',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mockery/mockery',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.1',

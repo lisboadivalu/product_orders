@@ -35,7 +35,7 @@ abstract class AbstractRepository
         $stmt = $this->connection->prepare("UPDATE $this->table SET $columns WHERE id = $validatedId");
         $stmt->execute();
 
-        return [];
+        return true;
     }
 
     public function delete(array $data)
